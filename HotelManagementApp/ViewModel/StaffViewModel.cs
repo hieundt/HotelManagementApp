@@ -28,8 +28,8 @@ namespace HotelManagementApp.ViewModel
         private string _PhoneNum;
         public string PhoneNum { get => _PhoneNum; set { _PhoneNum = value; OnPropertyChanged(); } }
 
-        private bool? _Role;
-        public bool? Role { get => _Role; set { _Role = value; OnPropertyChanged(); } }
+        private string  _Role;
+        public string Role { get => _Role; set { _Role = value; OnPropertyChanged(); } }
         private string _ImageSource;
         public string ImageSource { get => _ImageSource; set { _ImageSource = value; OnPropertyChanged(); } }
 
