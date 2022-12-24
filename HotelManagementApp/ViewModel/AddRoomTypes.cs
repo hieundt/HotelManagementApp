@@ -71,7 +71,7 @@ namespace HotelManagementApp.ViewModel
                 };
                 DataProvider.Instance.DB.RoomTypes.Add(roomType);
                 DataProvider.Instance.DB.SaveChanges();
-                LoadRoomTypesList();
+                LoadFilteredList();
                 ClearFields();
             });
             editCommand = new RelayCommand<object>((p) =>
@@ -94,7 +94,7 @@ namespace HotelManagementApp.ViewModel
                 DataProvider.Instance.DB.SaveChanges();
 
                 OnPropertyChanged();
-                LoadRoomTypesList();
+                LoadFilteredList();
                 ClearFields();
             });
             deleteCommand = new RelayCommand<object>((p) =>
@@ -112,12 +112,12 @@ namespace HotelManagementApp.ViewModel
                 DataProvider.Instance.DB.SaveChanges();
 
                 OnPropertyChanged();
-                LoadRoomTypesList();
+                LoadFilteredList();
                 ClearFields();
             });
         }
 
-        private void LoadRoomTypesList()
+        private void LoadFilteredList()
         {
             RoomTypesList = new ObservableCollection<RoomType>();
             var roomTypesList = DataProvider.Instance.DB.RoomTypes.Where(x => x.Deleted == false);
@@ -125,10 +125,6 @@ namespace HotelManagementApp.ViewModel
             {
                 RoomTypesList.Add(item);
             }
-            LoadFilteredList();
-        }
-        private void LoadFilteredList()
-        {
             ObservableCollection<RoomType> list = new ObservableCollection<RoomType>();
             foreach (var item in RoomTypesList)
             {

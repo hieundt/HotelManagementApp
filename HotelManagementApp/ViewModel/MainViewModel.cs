@@ -89,13 +89,12 @@ namespace HotelManagementApp.ViewModel
 
             ShowSingleBedroomWindowCommand = new RelayCommand<object>((p) => { return true; }, (p) =>
             {
-                //SingleBedroomWindow singleBedroomWindow = new SingleBedroomWindow();
-                //singleBedroomWindow.ShowDialog();
-                SingleBedroomInfoWindow singleBedroomWindow = new SingleBedroomInfoWindow();
+                SingleBedroomWindow singleBedroomWindow = new SingleBedroomWindow();
                 singleBedroomWindow.Show();
             }
             );
 
+           
             RefreshStatictics = new RelayCommand<object>((p) => true, (p) => LoadStatistics());
 
             LoadStatistics();
@@ -197,6 +196,8 @@ namespace HotelManagementApp.ViewModel
             int month = currentTime.Month;
             Labels = new[] { $"{month - 3}", $"{month - 2}", $"{month - 1}", $"{month}" };
             YFormatter = value => value.ToString("C");
+
+          
         }
     }
 }

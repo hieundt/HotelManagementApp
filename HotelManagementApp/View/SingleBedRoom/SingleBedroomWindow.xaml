@@ -8,6 +8,7 @@
         xmlns:uc="clr-namespace:HotelManagementApp.UserControlUI"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
+        DataContext="{StaticResource FastBookingVm}"
         x:Name="SingleBedroom"
         Title="Hotel Management"
         Background="#222831"

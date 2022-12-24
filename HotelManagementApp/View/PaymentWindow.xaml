@@ -10,6 +10,7 @@
         xmlns:uc="clr-namespace:HotelManagementApp.UserControlUI"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
+        DataContext="{StaticResource BillReportVm}"
         x:Name="PaymentView"
         Title="Hotel Management"
         Background="#FFEEE9FA"
@@ -173,6 +174,7 @@
                                FontSize="13"
                                FontWeight="SemiBold"
                                Foreground="Black"
+                               Text="{Binding CheckInTime}"
                                TextAlignment="Right"
                                TextWrapping="Wrap" />
                     <TextBlock x:Name="txbCheckOutTime"
@@ -181,10 +183,18 @@
                                FontSize="13"
                                FontWeight="SemiBold"
                                Foreground="Black"
+                               Text="{Binding CheckOutTime}"
                                TextAlignment="Right"
                                TextWrapping="Wrap" />
                 </StackPanel>
             </Grid>
+            <TextBlock x:Name="txbBookingId"
+                FontSize="13"
+                FontWeight="SemiBold"
+                Foreground="Black"
+                Text="{Binding Booking_Id}"
+                TextAlignment="Right"
+                TextWrapping="Wrap" Margin="109,81,411,3" />
         </Grid>
         <StackPanel Grid.Row="2"
                     Width="280"
@@ -201,12 +211,14 @@
                        FontSize="16"
                        FontWeight="Bold"
                        Foreground="Black"
+                       Text="{Binding CustomerName}"
                        TextWrapping="Wrap" />
             <TextBlock x:Name="txbCustomerPhoneNumber"
                        Margin="0,2,0,0"
                        FontSize="13"
                        FontWeight="SemiBold"
                        Foreground="Black"
+                       Text="{Binding CustomerPhoneNumber}"
                        TextWrapping="Wrap" />
         </StackPanel>
         <StackPanel Grid.Row="2"
@@ -343,6 +355,7 @@
                        Text="Total payment:"
                        TextAlignment="Right"
                        TextWrapping="Wrap" />
+            
             <StackPanel Width="260"
                         Margin="30,0,0,0"
                         HorizontalAlignment="Left"
@@ -462,24 +475,57 @@
                     <TextBlock x:Name="txbgoodspricetotal"
                                Margin="0"
                                HorizontalAlignment="Right"
-                               VerticalAlignment="Top"
                                FontSize="14"
                                FontWeight="SemiBold"
                                Foreground="Black"
                                Text="{Binding Good_total}"
                                TextAlignment="Right"
-                               TextWrapping="Wrap" />
+                               TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Width="155" >
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
                     <TextBlock x:Name="txbfieldprice"
                                Margin="0"
                                HorizontalAlignment="Right"
-                               VerticalAlignment="Top"
                                FontSize="14"
                                FontWeight="SemiBold"
                                Foreground="Black"
+                               Text="{Binding Room_price}"
                                TextAlignment="Right"
-                               TextWrapping="Wrap" />
+                               TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Width="156" >
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
                 </StackPanel>
             </Grid>
+            <TextBlock 
+                FontSize="14"
+                FontWeight="SemiBold"
+                Foreground="Black"
+                Text="{Binding Total_Payment}"
+                TextAlignment="Right"
+                TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Margin="150,72,10,92" Grid.Column="1" >
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
         </Grid>
     </Grid>
 </Window>

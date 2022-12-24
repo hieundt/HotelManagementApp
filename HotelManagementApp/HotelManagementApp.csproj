@@ -139,11 +139,15 @@
     <Compile Include="ViewModel\AddRoomTypes.cs" />
     <Compile Include="ViewModel\AddRoom\AddRoomViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\BillReportViewModel.cs" />
     <Compile Include="ViewModel\FoodsAndServices\FoodViewModel.cs" />
     <Compile Include="ViewModel\Login\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\SBBookingViewModel.cs" />
     <Compile Include="ViewModel\ServiceViewModel.cs" />
     <Compile Include="ViewModel\Settings\SettingsViewModel.cs" />
+    <Compile Include="ViewModel\SingleBedroomBillViewModel.cs" />
+    <Compile Include="ViewModel\SingleBedroomBookingViewModel.cs" />
     <Compile Include="ViewModel\SingleBedRoomInfo\SingleBedroomInfoViewModel.cs" />
     <Compile Include="ViewModel\Staff\StaffViewModel.cs" />
     <Compile Include="ViewModel\UserControlViewModel\ControlBarViewModel.cs" />

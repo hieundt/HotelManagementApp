@@ -16,9 +16,9 @@
         ResizeMode="NoResize"
         WindowStyle="None"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        DataContext="{StaticResource MainVm}"
         Name="MainMenuWindow"
         Title="Hotel Management Application"
+        DataContext="{StaticResource MainVm}"
         WindowStartupLocation="CenterScreen"
         Width="1300"
         Height="700">
@@ -382,7 +382,8 @@
                                             </StackPanel>
                                         </TabItem.Header>
                                         <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
-                                            <ListBox DataContext="{StaticResource FoodVm}"  ItemsSource="{Binding FoodsAndServicesList, UpdateSourceTrigger=PropertyChanged}" 
+                                            <!--
+                                            <ListBox DataContext="{StaticResource FoodVm}" ItemsSource="{Binding FoodsAndServicesList, UpdateSourceTrigger=PropertyChanged}" 
                                                      SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}"
                                                      x:Name="lbFAndS" Margin="20" Height="500" Width="Auto">
                                                 <ListBox.ItemsPanel>
@@ -393,7 +394,8 @@
 
                                                 <ListBox.ItemTemplate>
                                                     <DataTemplate>
-                                                        <!-- <local1:FAndSBlock DataContext="{Binding}"/> -->
+                                            
+                                                        <local1:FAndSBlock DataContext="{Binding}"/>C
                                                         <Border MaxHeight="200" MaxWidth="180"
                                                                 Grid.Row="1" Background="AntiqueWhite"
                                                                 BorderThickness="2" BorderBrush="Gray"
@@ -424,6 +426,7 @@
                                                     </DataTemplate>
                                                 </ListBox.ItemTemplate>
                                             </ListBox>
+                                             -->
                                         </ScrollViewer>
                                     </TabItem>
 
@@ -903,7 +906,8 @@
                         <Grid Grid.Row="2" />
                     </Grid>
                 </TabItem>
-                <TabItem DataContext="{StaticResource FoodVm}">
+                <TabItem >
+                    <!-- DataContext="{StaticResource FoodVm}"-->
                     <TabItem.Header>
                         <StackPanel Width="auto"
                                     Height="auto">
@@ -1366,7 +1370,8 @@
 
                 </TabItem>
 
-                <TabItem DataContext="{StaticResource StaffVm}">
+                <TabItem>
+                    <!--  DataContext="{StaticResource StaffVm}"-->
                     <TabItem.Header>
                         <StackPanel Width="auto"
                                     Height="auto">
@@ -1953,7 +1958,8 @@
                     </Grid>
 
                 </TabItem>
-                <TabItem DataContext="{StaticResource AddRoomForAdminVm}"
+                <!-- DataContext="{StaticResource AddRoomForAdminVm}"-->
+                <TabItem 
                          Visibility="{Binding AdminVisibility, Source={StaticResource Const}}">
                     <TabItem.Header>
                         <StackPanel Width="auto"

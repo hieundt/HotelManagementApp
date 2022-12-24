@@ -12,4 +12,9 @@
     <viewmodel:SingleBedroomInfoViewModel x:Key="SingleBedroomInfoViewmodel"></viewmodel:SingleBedroomInfoViewModel>
     <viewmodel:AddRoomForAdminViewModel x:Key="AddRoomForAdminVm"></viewmodel:AddRoomForAdminViewModel>
     <viewmodel:AddRoomTypes x:Key="AddRoomTypesVm"></viewmodel:AddRoomTypes>
+    <viewmodel:SingleBedroomBookingViewModel x:Key="FastbookingViewmodel"></viewmodel:SingleBedroomBookingViewModel>
+    <viewmodel:SingleBedroomBillViewModel x:Key="SingleBedroomBillVm"></viewmodel:SingleBedroomBillViewModel>
+    <viewmodel:SBBookingViewModel x:Key="FastBookingVm"></viewmodel:SBBookingViewModel>
+    <viewmodel:BillReportViewModel x:Key="BillReportVm"></viewmodel:BillReportViewModel>
+
 </ResourceDictionary>

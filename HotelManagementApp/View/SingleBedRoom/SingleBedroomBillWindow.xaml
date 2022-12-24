@@ -7,6 +7,7 @@
         xmlns:uc="clr-namespace:HotelManagementApp.UserControlUI"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
+        DataContext="{StaticResource SingleBedroomBillVm}"
         Name="SingleBedroomBill"
         Title="Hotel Management"
         Width="1000"

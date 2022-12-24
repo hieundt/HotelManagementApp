@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\University\LTTQ\modified\HotelManagementApp\HotelManagementApp\obj\Debug\
+D:\CLONE(22-12-2022)\HotelManagementApp\obj\Debug\
 HotelManagementApp
 none
 false
 DEBUG;TRACE
-D:\University\LTTQ\modified\HotelManagementApp\HotelManagementApp\App.xaml
+D:\CLONE(22-12-2022)\HotelManagementApp\App.xaml
 111245037901
 2739969757
-422091775801
-24-936352156
+46-660114650
+24-18498108
 MainWindow.xaml;ResourceXAML\MainResource.xaml;UserControlUI\ControlBarUC.xaml;View\AddRoom.xaml;View\LoginWindow.xaml;View\PaymentWindow.xaml;View\SingleBedRoom\SingleBedroomWindow.xaml;View\SingleBedRoom\SingleBedroomBillWindow.xaml;View\SingleBedRoom\SingleBedroomEditWindow.xaml;View\SingleBedRoom\SingleBedRoomFastBookingWindow.xaml;View\SingleBedRoom\SingleBedroomInfoWindow.xaml;
 
-False
+True
 
