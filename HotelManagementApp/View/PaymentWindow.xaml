@@ -125,6 +125,7 @@
                        FontSize="14"
                        FontWeight="SemiBold"
                        Foreground="Black"
+                       Text="{Binding Booking_Id}"
                        TextWrapping="Wrap" />
             <Grid Width="160"
                   Margin="0,0,40,10"
@@ -173,6 +174,7 @@
                                FontSize="13"
                                FontWeight="SemiBold"
                                Foreground="Black"
+                               Text="{Binding CheckInTime}"
                                TextAlignment="Right"
                                TextWrapping="Wrap" />
                     <TextBlock x:Name="txbCheckOutTime"
@@ -181,6 +183,7 @@
                                FontSize="13"
                                FontWeight="SemiBold"
                                Foreground="Black"
+                               Text="{Binding CheckOutTime}"
                                TextAlignment="Right"
                                TextWrapping="Wrap" />
                 </StackPanel>
@@ -201,12 +204,14 @@
                        FontSize="16"
                        FontWeight="Bold"
                        Foreground="Black"
+                       Text="{Binding CustomerName}"
                        TextWrapping="Wrap" />
             <TextBlock x:Name="txbCustomerPhoneNumber"
                        Margin="0,2,0,0"
                        FontSize="13"
                        FontWeight="SemiBold"
                        Foreground="Black"
+                       Text="{Binding CustomerPhoneNumber}"
                        TextWrapping="Wrap" />
         </StackPanel>
         <StackPanel Grid.Row="2"
@@ -340,7 +345,7 @@
                        FontSize="14"
                        FontWeight="SemiBold"
                        Foreground="Black"
-                       Text="Total payment:"
+                       Text="{Binding Total_Payment}"
                        TextAlignment="Right"
                        TextWrapping="Wrap" />
             <StackPanel Width="260"
@@ -457,11 +462,11 @@
                                TextWrapping="Wrap" />
                 </StackPanel>
                 <StackPanel Grid.Column="1"
-                            HorizontalAlignment="Right"
+                            HorizontalAlignment="Left"
                             VerticalAlignment="Top">
                     <TextBlock x:Name="txbgoodspricetotal"
                                Margin="0"
-                               HorizontalAlignment="Right"
+                               HorizontalAlignment="Left"
                                VerticalAlignment="Top"
                                FontSize="14"
                                FontWeight="SemiBold"
@@ -471,11 +476,12 @@
                                TextWrapping="Wrap" />
                     <TextBlock x:Name="txbfieldprice"
                                Margin="0"
-                               HorizontalAlignment="Right"
+                               HorizontalAlignment="Left"
                                VerticalAlignment="Top"
                                FontSize="14"
                                FontWeight="SemiBold"
                                Foreground="Black"
+                               Text="{Binding Room_price}"
                                TextAlignment="Right"
                                TextWrapping="Wrap" />
                 </StackPanel>
