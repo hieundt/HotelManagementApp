@@ -23,68 +23,61 @@ namespace HotelManagementApp.ViewModel
         private BillDetail _SelectedItem;
         public BillDetail SelectedItem { get => _SelectedItem; set { _SelectedItem = value; OnPropertyChanged(); } }
         public BillsViewModel() {
-            LoadFilteredList();
+            FilteredList = Global.BillsList;
         }
         void LoadFilteredList()
         {
             ObservableCollection<BillDetail> list = new ObservableCollection<BillDetail>();
-            if (string.IsNullOrEmpty(Filter) && string.IsNullOrEmpty(SearchString) && string.IsNullOrEmpty(StatusFilter))
+            foreach (var item in Global.BillsList)
             {
-                foreach(var item in DataProvider.Instance.DB.BillDetails)
+                if (string.IsNullOrEmpty(Filter) && string.IsNullOrEmpty(SearchString) && string.IsNullOrEmpty(StatusFilter))
                 {
-                    list.Add(item);
+                    list = Global.BillsList;
                 }
-            }
-            else
-            {
-                foreach (var item in DataProvider.Instance.DB.BillDetails)
+                else if (string.IsNullOrEmpty(Filter) && string.IsNullOrEmpty(SearchString) && !string.IsNullOrEmpty(StatusFilter))
                 {
-                    if (string.IsNullOrEmpty(Filter) && string.IsNullOrEmpty(SearchString) && !string.IsNullOrEmpty(StatusFilter))
+                    if (item.Status == StatusFilter)
                     {
-                        if (item.Status == StatusFilter)
-                        {
-                            list.Add(item);
-                        }
+                        list.Add(item);
                     }
-                    else
+                }
+                else
+                {
+                    switch (Filter)
                     {
-                        switch (Filter)
-                        {
-                            case "Bill ID":
-                                if (string.IsNullOrEmpty(SearchString) || (item.ID == Convert.ToInt32(SearchString)) && (item.Status == StatusFilter || string.IsNullOrEmpty(StatusFilter)))
-                                {
-                                    list.Add(item);
-                                }
-                                break;
-                            case "Customer ID":
-                                if ((string.IsNullOrEmpty(SearchString) || item.IDCustomer.ToString().Contains(SearchString)) && (item.Status == StatusFilter || string.IsNullOrEmpty(StatusFilter)))
-                                {
-                                    list.Add(item);
-                                }
-                                break;
-                            case "Customer Name":
-                                if ((string.IsNullOrEmpty(SearchString) || item.Customer.Name.Contains(SearchString)) && (item.Status == StatusFilter || string.IsNullOrEmpty(StatusFilter)))
-                                {
-                                    list.Add(item);
-                                }
-                                break;
-                            case "Customer CCCD":
-                                if ((string.IsNullOrEmpty(SearchString) || item.Customer.CCCD.Contains(SearchString)) && (item.Status == StatusFilter || string.IsNullOrEmpty(StatusFilter)))
-                                {
-                                    list.Add(item);
-                                }
-                                break;
-                            case "Staff ID":
-                                if ((string.IsNullOrEmpty(SearchString) || item.IDStaff.ToString().Contains(SearchString)) && (item.Status == StatusFilter || string.IsNullOrEmpty(StatusFilter)))
-                                {
-                                    list.Add(item);
-                                }
-                                break;
-                        }
+                        case "Bill ID":
+                            if (string.IsNullOrEmpty(SearchString) || (item.ID == Convert.ToInt32(SearchString)) && (item.Status == StatusFilter || string.IsNullOrEmpty(StatusFilter)))
+                            {
+                                list.Add(item);
+                            }
+                            break;
+                        case "Customer ID":
+                            if ((string.IsNullOrEmpty(SearchString) || item.IDCustomer.ToString().Contains(SearchString)) && (item.Status == StatusFilter || string.IsNullOrEmpty(StatusFilter)))
+                            {
+                                list.Add(item);
+                            }
+                            break;
+                        case "Customer Name":
+                            if ((string.IsNullOrEmpty(SearchString) || item.Customer.Name.Contains(SearchString)) && (item.Status == StatusFilter || string.IsNullOrEmpty(StatusFilter)))
+                            {
+                                list.Add(item);
+                            }
+                            break;
+                        case "Customer CCCD":
+                            if ((string.IsNullOrEmpty(SearchString) || item.Customer.CCCD.Contains(SearchString)) && (item.Status == StatusFilter || string.IsNullOrEmpty(StatusFilter)))
+                            {
+                                list.Add(item);
+                            }
+                            break;
+                        case "Staff ID":
+                            if ((string.IsNullOrEmpty(SearchString) || item.IDStaff.ToString().Contains(SearchString)) && (item.Status == StatusFilter || string.IsNullOrEmpty(StatusFilter)))
+                            {
+                                list.Add(item);
+                            }
+                            break;
                     }
                 }
             }
-            
             FilteredList = list;
         }
     }

@@ -105,7 +105,6 @@ namespace HotelManagementApp.ViewModel
             });
             ConfirmBillBtn = new RelayCommand<object>((p) => true, (p) =>
             {
-                var SBill = Bill;
                 Bill.Status = "Completed";
                 foreach (var item in Bill.RoomsReservations)
                 {
@@ -114,8 +113,7 @@ namespace HotelManagementApp.ViewModel
                     Global.RoomsList.Add(item.Room);
                     Global.OnGoingReservationsList.Remove(item);
                 }
-                Global.BillsList.Remove(SBill);
-                Global.BillsList.Add(Bill);
+                Global.BillsList.Where(x => x.ID == Bill.ID).FirstOrDefault().Status = "Completed";
                 DataProvider.Instance.DB.SaveChanges();
                 SelectedReservation = null;
                 SelectedBill = null;
